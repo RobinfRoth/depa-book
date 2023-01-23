@@ -3,7 +3,11 @@ package decorator;
 // component
 
 public abstract class Beverage {
-    String description = "Unbekanntes Getränk";
+    private String description = "Unbekanntes Getränk";
+
+    public Beverage(String description) {
+        this.description = description;
+    }
 
     public String getDescription() {
         return description;
