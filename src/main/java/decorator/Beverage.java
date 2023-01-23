@@ -1,5 +1,7 @@
 package decorator;
 
+// component
+
 public abstract class Beverage {
     String description = "Unbekanntes Getränk";
 
