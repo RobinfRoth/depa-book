@@ -13,7 +13,7 @@ public class Mocha extends CondimentDecorator {
     }
 
     public double cost() {
-        var extraCharge = getSize().ordinal() * 0.05;
+        var extraCharge = getSize().ordinal() * .05 + .1;
         return beverage.cost() + .2 + extraCharge;
     }
 
