@@ -5,6 +5,7 @@ package decorator;
 public class Mocha extends CondimentDecorator {
     public Mocha(Beverage beverage) {
         this.beverage = beverage;
+        setSize(beverage.getSize());
     }
 
     public String getDescription() {
@@ -12,7 +13,8 @@ public class Mocha extends CondimentDecorator {
     }
 
     public double cost() {
-        return beverage.cost() + .2;
+        var extraCharge = getSize().ordinal() * 0.05;
+        return beverage.cost() + .2 + extraCharge;
     }
 
 }

@@ -4,8 +4,8 @@ package decorator;
 
 public class HouseBlend extends Beverage {
 
-    public HouseBlend() {
-        super("House Blend");
+    public HouseBlend(Size size) {
+        super("House Blend", size);
     }
 
     public double cost() {

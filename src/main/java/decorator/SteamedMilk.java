@@ -5,6 +5,7 @@ package decorator;
 public class SteamedMilk extends CondimentDecorator {
     public SteamedMilk(Beverage beverage) {
         this.beverage = beverage;
+        setSize(beverage.getSize());
     }
 
     @Override
@@ -14,6 +15,7 @@ public class SteamedMilk extends CondimentDecorator {
 
     @Override
     public double cost() {
-        return beverage.cost() + 0.1;
+        var extraCharge = getSize().ordinal() * 0.05;
+        return beverage.cost() + 0.1 + extraCharge;
     }
 }

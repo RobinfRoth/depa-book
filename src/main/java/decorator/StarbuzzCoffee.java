@@ -8,11 +8,11 @@ public class StarbuzzCoffee {
 
     public static void main(String[] args) {
         // just a an espresso
-        Beverage beverage = new Espresso();
+        Beverage beverage = new Espresso(Beverage.Size.TALL);
         out.println(beverage.getDescription() + " $" + beverage.cost());
 
         // "decorated" Dark Roast
-        Beverage beverage2 = new DarkRoast();
+        Beverage beverage2 = new DarkRoast(Beverage.Size.VENTI);
         beverage2 = new Mocha(beverage2); // wrap with mocha
         beverage2 = new Mocha(beverage2);
         beverage2 = new Soy(beverage2);
@@ -20,7 +20,7 @@ public class StarbuzzCoffee {
         out.println(beverage2.getDescription() + " $" + beverage2.cost());
 
         // fancy "decorated" House Blend
-        Beverage beverage3 = new HouseBlend();
+        Beverage beverage3 = new HouseBlend(Beverage.Size.GRANDE);
         beverage3 = new Soy(beverage3);
         beverage3 = new Mocha(beverage3);
         beverage3 = new Whip(beverage3);

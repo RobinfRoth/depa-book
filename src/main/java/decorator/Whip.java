@@ -5,6 +5,7 @@ package decorator;
 public class Whip extends CondimentDecorator {
     public Whip(Beverage beverage) {
         this.beverage = beverage;
+        setSize(beverage.getSize());
     }
 
     @Override
@@ -14,6 +15,7 @@ public class Whip extends CondimentDecorator {
 
     @Override
     public double cost() {
-        return beverage.cost() + .10;
+        var extraCharge = getSize().ordinal() * 0.05;
+        return beverage.cost() + .10 + extraCharge;
     }
 }

@@ -3,8 +3,8 @@ package decorator;
 // concrete component
 
 public class Decaf extends Beverage {
-    public Decaf() {
-        super("Decaf");
+    public Decaf(Size size) {
+        super("Decaf", size);
     }
 
     public double cost() {
