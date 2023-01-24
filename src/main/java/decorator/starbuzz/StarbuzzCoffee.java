@@ -1,4 +1,4 @@
-package decorator;
+package decorator.starbuzz;
 
 import static java.lang.System.out;
 

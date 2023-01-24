@@ -1,4 +1,4 @@
-package decorator_io;
+package decorator.io;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

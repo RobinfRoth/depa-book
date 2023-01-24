@@ -1,4 +1,4 @@
-package decorator;
+package decorator.starbuzz;
 
 // abstract decorator
 
