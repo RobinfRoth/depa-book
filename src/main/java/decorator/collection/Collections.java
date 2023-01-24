@@ -26,11 +26,11 @@ public class Collections {
 			}
 		}
 
-		class UnmodifiableDecorator implements Collection<T> {
+		class UnmodifiableCollectionDecorator implements Collection<T> {
 
 			private final Collection<T> wrappedCollection;
 
-			public UnmodifiableDecorator(Collection<T> collection) {
+			public UnmodifiableCollectionDecorator(Collection<T> collection) {
 				wrappedCollection = collection;
 			}
 
@@ -112,7 +112,7 @@ public class Collections {
 			}
 		}
 
-		return new UnmodifiableDecorator(c);
+		return new UnmodifiableCollectionDecorator(c);
 	}
 
 }
