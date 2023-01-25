@@ -5,7 +5,7 @@ public class RemoteLoaderLambda {
     public static void main(String[] args) {
 
         // invoker
-        RemoteControl remote = new RemoteControl();
+        RemoteControlFunctionalWithoutUndo remote = new RemoteControlFunctionalWithoutUndo();
 
         // Receivers
         Light livingRoomLight = new Light("Living Room");
