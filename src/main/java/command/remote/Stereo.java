@@ -46,4 +46,12 @@ public class Stereo {
         System.out.printf("%s: Lautstärke auf %d gesetzt.\n", location, volume);
     }
 
+    public int getVolume() {
+        return volume;
+    }
+
+    public String getCd() {
+        return currentCD;
+    }
+
 }
