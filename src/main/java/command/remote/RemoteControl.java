@@ -5,6 +5,7 @@ package command.remote;
 public class RemoteControl {
     private Command[] onCommands;
     private Command[] offCommands;
+    private Command lastCommand; // undo command (there is one unified undo command)
 
     public RemoteControl() {
         onCommands = new Command[7];
@@ -15,6 +16,7 @@ public class RemoteControl {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
+        lastCommand = noCommand;
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -24,10 +26,16 @@ public class RemoteControl {
 
     public void onButtonWasPushed(int slot) {
         onCommands[slot].execute();
+        lastCommand = onCommands[slot];
     }
 
     public void offButtonWasPushed(int slot) {
         offCommands[slot].execute();
+        lastCommand = offCommands[slot];
+    }
+
+    public void undoButtonWasPushed() {
+        lastCommand.undo();
     }
 
     @Override
@@ -43,6 +51,8 @@ public class RemoteControl {
                      .append(offCommands[i].getClass().getName())
                      .append("\n");
         }
+
+        stringBuf.append("[Undo] " + lastCommand.getClass().getName());
         return stringBuf.toString();
     }
 }

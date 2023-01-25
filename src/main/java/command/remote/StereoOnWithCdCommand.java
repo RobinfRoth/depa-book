@@ -17,4 +17,7 @@ public class StereoOnWithCdCommand implements Command {
         stereo.setCd("The Wall [Remastered]");
         stereo.setVolume(42);
     }
+
+    @Override
+    public void undo() {}
 }
